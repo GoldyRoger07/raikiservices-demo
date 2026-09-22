@@ -133,7 +133,7 @@
        ffmpeg -i source.mp4 -an -vcodec libx264 -g 1 -crf 22 -vf scale=1600:-2 video/hero.mp4 -->
   <video id="heroVideo" class="absolute inset-0 h-full w-full object-cover opacity-0" src="video/hero.mp4" muted playsinline preload="auto"></video>
   <!-- Fallback si pas de vidéo : l'affiche animée -->
-  <img id="heroFallback" src="img/affiche-saveurs.png" alt="" class="absolute inset-0 h-full w-full object-cover object-[50%_30%] scale-125">
+  <!-- <img id="heroFallback" src="img/affiche-saveurs.png" alt="" class="absolute inset-0 h-full w-full object-cover object-[50%_30%] scale-125"> -->
   <div class="absolute inset-0 bg-gradient-to-b from-ink-900/70 via-ink-900/40 to-ink-900"></div>
   <div id="heroGlow" class="absolute left-1/2 top-1/2 h-[70vmin] w-[70vmin] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-500/25 blur-3xl"></div>
 
@@ -143,10 +143,10 @@
     <p class="mt-8 text-xs uppercase tracking-[0.5em] text-gold-300">Rhum artisanal haïtien</p>
     <h1 class="mt-4 font-serif text-6xl font-black leading-none sm:text-8xl lg:text-[10rem]"><span class="text-gold-gradient">Bowòm</span></h1>
     <p class="mt-6 max-w-xl text-base text-white/80 sm:text-lg">Des infusions de rhum nées de nos racines, pour partager les meilleurs moments entre amis.</p>
-    <div class="absolute bottom-10 flex flex-col items-center gap-2 text-xs uppercase tracking-[0.3em] text-white/60">
+    <!-- <div class="absolute bottom-10 flex flex-col items-center gap-2 text-xs uppercase tracking-[0.3em] text-white/60">
       <span>Défiler</span>
       <i data-lucide="chevrons-down" class="h-5 w-5 animate-bounce text-gold-400"></i>
-    </div>
+    </div> -->
   </div>
 
   <!-- Phase 2 -->
@@ -925,7 +925,7 @@ heroTl
   .to({}, { duration: .4 }); // petite pause en fin de pin
 
 /* --- Intro --- */
-gsap.from('.hero-logo', { scale: 0, rotate: -180, duration: 1.2, ease: 'back.out(1.6)' });
+gsap.from('.hero-logo', { scale: 0, rotate: -0, duration: 1.2, ease: 'back.out(1.6)' });
 gsap.from('[data-phase="1"] > :not(.hero-logo)', { y: 40, opacity: 0, stagger: .12, duration: 1, delay: .3, ease: 'power3.out' });
 
 /* --- Reveals génériques --- */
