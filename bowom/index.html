@@ -597,23 +597,24 @@ const FLAVORS = [
 
 /* Bouteille SVG colorée selon la saveur */
 function bottleSVG(color, id, cls = '') {
-  return `<svg viewBox="0 0 120 230" class="${cls}" aria-hidden="true">
+  const body = 'M104.291 109H212.812V141.486C212.812 157.729 314.552 173.973 314.552 233.531V569.222C314.552 596.294 287.421 617.951 253.508 617.951H63.595C29.6819 617.951 2.55151 596.294 2.55151 569.222V233.531C2.55151 173.973 104.291 157.729 104.291 141.486V109Z';
+  const cap = 'M208.552 0H106.552C97.1627 0 89.5515 7.74742 89.5515 17.3043V93.4435C89.5515 103 97.1627 110.748 106.552 110.748H208.552C217.94 110.748 225.552 103 225.552 93.4435V17.3043C225.552 7.74742 217.94 0 208.552 0Z';
+  return `<svg viewBox="0 0 319 621" fill="none" class="${cls}" aria-hidden="true">
     <defs>
-      <clipPath id="c${id}"><path d="M44 36h32v12c0 6 30 12 30 34v124c0 10-8 18-18 18H32c-10 0-18-8-18-18V82c0-22 30-28 30-34z"/></clipPath>
-      <linearGradient id="g${id}" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".25" stop-color="#fff" stop-opacity="0"/><stop offset=".85" stop-color="#000" stop-opacity=".15"/></linearGradient>
+      <clipPath id="c${id}"><path d="${body}"/></clipPath>
+      <linearGradient id="a${id}" x1="89.5515" y1="0" x2="225.552" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity=".35"/><stop offset=".25" stop-color="#fff" stop-opacity="0"/><stop offset=".85" stop-opacity=".15"/></linearGradient>
+      <linearGradient id="b${id}" x1="3.55151" y1="380" x2="315.552" y2="384" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#111" stop-opacity=".5"/></linearGradient>
+      <linearGradient id="g${id}" x1="-15.4485" y1="407.5" x2="314.552" y2="404" gradientUnits="userSpaceOnUse"><stop offset=".2" stop-color="#D8D8D8" stop-opacity=".354"/><stop offset=".41" stop-color="#AFAFAF" stop-opacity=".2"/><stop offset=".66" stop-color="#787878" stop-opacity="0"/><stop offset="1" stop-color="#111" stop-opacity=".4"/></linearGradient>
     </defs>
-    <rect x="40" y="6" width="40" height="32" rx="5" fill="#F4F4F2"/>
-    <rect x="40" y="6" width="40" height="32" rx="5" fill="url(#g${id})"/>
     <g clip-path="url(#c${id})">
-      <rect x="0" y="0" width="120" height="230" fill="rgba(255,255,255,.15)"/>
-      <rect class="liquid" x="0" y="70" width="120" height="170" fill="${color}"/>
-      <rect x="14" y="112" width="92" height="74" fill="#FBF7EE"/>
-      <circle cx="60" cy="140" r="20" fill="none" stroke="#1A140E" stroke-width="2" stroke-dasharray="4 3"/>
-      <path d="M60 128l3 7h7l-5.5 4.5 2 7-6.5-4-6.5 4 2-7-5.5-4.5h7z" fill="#D4A017"/>
-      <text x="60" y="176" text-anchor="middle" font-family="Permanent Marker, cursive" font-size="15" fill="#1A140E">BOWÒM</text>
-      <rect x="0" y="0" width="120" height="230" fill="url(#g${id})"/>
+      <rect class="liquid" x="2.55151" y="168" width="312" height="450" fill="${color}"/>
     </g>
-    <path d="M44 36h32v12c0 6 30 12 30 34v124c0 10-8 18-18 18H32c-10 0-18-8-18-18V82c0-22 30-28 30-34z" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/>
+    <rect x="2.55151" y="272" width="312" height="234" fill="#fff"/>
+    <image href="img/etiquette-bowom.png" x="2.55151" y="272" width="312" height="234" preserveAspectRatio="none"/>
+    <path d="${cap}" fill="#F4F4F2"/>
+    <path d="${cap}" fill="url(#a${id})"/>
+    <path d="${body}" transform="translate(1 0)" stroke="url(#b${id})" stroke-opacity=".55" stroke-width="5.10319"/>
+    <path d="${body}" fill="url(#g${id})" stroke="#fff" stroke-opacity=".55" stroke-width="5.10319"/>
   </svg>`;
 }
 
@@ -939,7 +940,7 @@ if (!reduceMotion) {
     scrollTrigger: { trigger: '#productGrid', start: 'top 80%' }
   });
   gsap.utils.toArray('.product .liquid').forEach(l => {
-    gsap.from(l, { attr: { y: 230 }, duration: 1.6, ease: 'power2.out', scrollTrigger: { trigger: l.closest('.product'), start: 'top 80%' } });
+    gsap.from(l, { attr: { y: 621 }, duration: 1.6, ease: 'power2.out', scrollTrigger: { trigger: l.closest('.product'), start: 'top 80%' } });
   });
 
   gsap.from('.pack-bottle', {

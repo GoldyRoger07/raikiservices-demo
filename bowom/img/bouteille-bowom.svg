@@ -1,0 +1,18 @@
+<svg viewBox="0 0 120 230" class="h-60 drop-shadow-2xl transition duration-500 group-hover:scale-110 group-hover:-rotate-6" aria-hidden="true">
+    <defs>
+      <clipPath id="cp0"><path d="M44 36h32v12c0 6 30 12 30 34v124c0 10-8 18-18 18H32c-10 0-18-8-18-18V82c0-22 30-28 30-34z"></path></clipPath>
+      <linearGradient id="gp0" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".35"></stop><stop offset=".25" stop-color="#fff" stop-opacity="0"></stop><stop offset=".85" stop-color="#000" stop-opacity=".15"></stop></linearGradient>
+    </defs>
+    <rect x="40" y="6" width="40" height="32" rx="5" fill="#F4F4F2"></rect>
+    <rect x="40" y="6" width="40" height="32" rx="5" fill="url(#gp0)"></rect>
+    <g clip-path="url(#cp0)">
+      <rect x="0" y="0" width="120" height="230" fill="rgba(255,255,255,.15)"></rect>
+      <rect class="liquid" x="0" y="70" width="120" height="170" fill="#E8A317"></rect>
+      <rect x="14" y="112" width="92" height="74" fill="#FBF7EE"></rect>
+      <circle cx="60" cy="140" r="20" fill="none" stroke="#1A140E" stroke-width="2" stroke-dasharray="4 3"></circle>
+      <path d="M60 128l3 7h7l-5.5 4.5 2 7-6.5-4-6.5 4 2-7-5.5-4.5h7z" fill="#D4A017"></path>
+      <text x="60" y="176" text-anchor="middle" font-family="Permanent Marker, cursive" font-size="15" fill="#1A140E">BOWÒM</text>
+      <rect x="0" y="0" width="120" height="230" fill="url(#gp0)"></rect>
+    </g>
+    <path d="M44 36h32v12c0 6 30 12 30 34v124c0 10-8 18-18 18H32c-10 0-18-8-18-18V82c0-22 30-28 30-34z" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5"></path>
+  </svg>
